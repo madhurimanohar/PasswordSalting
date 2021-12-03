@@ -2,6 +2,7 @@ import hashlib
 import os
 import random
 import bcrypt
+import secrets
 
 ##### User input below ##### 
 
@@ -17,8 +18,6 @@ print("User Password Hash: ", userPswdHash.hexdigest() + '\n')
 # Method 1: Use Python's random library and generate a random choice of characters
 
 print("Method 1 Below \n")
-
-pswdLength = range(8, 32)
 
 characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 list = []
@@ -66,3 +65,12 @@ check = bcrypt.checkpw(userPswdBcrypt, hash3)
 print("Generated Salt: ", salt3, "\n")
 print("Hashed Password with Salt using bcrypt lib: ", hash3, "\n")
 print("Check to see if the hashed password matches: ", check, "\n")
+
+# Method 4: Use Python's secret library
+
+print("Method 4 Below \n")
+
+salt4 = secrets.token_hex(8)
+
+print("Salt Output using secrets lib: ", salt4, "\n")
+
