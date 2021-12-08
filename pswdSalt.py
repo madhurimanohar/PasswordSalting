@@ -38,6 +38,8 @@ for i in list:
 
 print("\nSalt Output using random lib:", salt1 + '\n')
 
+var1 = input("")
+
 # Method 2: Use Python's os library
 
 print("Method 2 Below \n")
@@ -47,6 +49,8 @@ salt2 = (os.urandom(32)) # can add base 62 code here later to make it more compl
 output2 = hashlib.pbkdf2_hmac('sha256', userPswd.encode(), salt2, 100000, dklen=128)
 
 print("Salt Output using os lib: ", output2, "\n")
+
+var2 = input("")
 
 # Method 3: Use Python's bcrypt library
 
@@ -64,7 +68,12 @@ check = bcrypt.checkpw(userPswdBcrypt, hash3)
 
 print("Generated Salt: ", salt3, "\n")
 print("Hashed Password with Salt using bcrypt lib: ", hash3, "\n")
+
+var3 = input("")
+
 print("Check to see if the hashed password matches: ", check, "\n")
+
+var4 = input("")
 
 # Method 4: Use Python's secret library
 
